@@ -407,12 +407,12 @@ def draw_graph(graph, graphimg_file):  # pragma: no cover
     """
     fig, ax = plt.subplots()
     elarge = [(u, v) for (u, v, d) in graph.edges(data=True) if d['weight'] > 3]
-    #print(elarge)
+    # print(elarge)
     esmall = [(u, v) for (u, v, d) in graph.edges(data=True) if d['weight'] <= 3]
-   # print(elarge)
+    # print(elarge)
     # Draw the graph with networkx
     pos = nx.spring_layout(graph)
-    #pos = nx.random_layout(graph)
+    # pos = nx.random_layout(graph)
     nx.draw_networkx_nodes(graph, pos, node_size=6)
     nx.draw_networkx_edges(graph, pos, edgelist=elarge, width=6)
     nx.draw_networkx_edges(graph, pos, edgelist=esmall, width=6, alpha=0.5,
